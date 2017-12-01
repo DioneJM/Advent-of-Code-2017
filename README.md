@@ -2,4 +2,4 @@
 
 Advent of Code solutions written in Python
 
-See here for more details: http://adventofcode.com/
+See here for more details: http://adventofcode.com/2017
