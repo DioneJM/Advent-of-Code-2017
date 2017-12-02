@@ -1,5 +1,4 @@
 
-
 def part1(captcha):
     totalSum = 0
     inputLength = len(captcha)
