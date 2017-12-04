@@ -19,7 +19,7 @@ def verify_password(passwords):
             part1 += 1
             
             #part 2
-            anagram = 0
+            anagram = False
             s = p.split(" ")
             index = 0
             for word in s[index:len(s)]: #grab a word from each line
@@ -29,9 +29,12 @@ def verify_password(passwords):
                     #convert other words to alphabetical list of characters
                     others= alphabetize(other)
                     if words == others: #check if anagram (have the same contents)
-                        anagram += 1
+                        anagram = True
+                        break
                 index += 1
-            if anagram == 0:
+                if anagram == True:
+                    break
+            if anagram == False:
                 part2 += 1
     return (part1, part2)
 
