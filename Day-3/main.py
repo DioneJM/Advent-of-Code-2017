@@ -19,7 +19,7 @@ def generate_grids(find, size):
     direction = cycle([(1, 0),(0 , 1),(-1, 0),(0, -1)]) 
     partA = 0
     partB = 0
-    bFound = False
+    foundB = False
 
     while True:
         for t in range(turns):
@@ -39,9 +39,9 @@ def generate_grids(find, size):
                 if node == find:
                     partA = abs(position[0]) + abs(position[1])
                 if nodeSum > find:
-                    if not bFound:
+                    if not foundB:
                         partB = nodeSum
-                        bFound = True
+                        foundB = True
                 if node > size:
                     return (partA, partB)
         numSteps += 1
