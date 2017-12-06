@@ -1,5 +1,4 @@
 
-
 def distribute(blocks):
     states = set()
     currentState = blocks
@@ -30,7 +29,7 @@ def distribute(blocks):
             toRemove -= 1
        
         count += 1
-        if compareLists(currentState,findState) and firstOcc < 0:
+        if currentState == findState and firstOcc < 0:
             firstOcc = count
         currentState = blocks
         cycles += 1
@@ -38,14 +37,6 @@ def distribute(blocks):
     diff = cycles - firstOcc
     print("Took: " + str(cycles) + " cycles until the state repeated") #Part 1
     print("# of cycles between first and second occurence of state = " + str(diff)) #Part 2
-
-def compareLists(listA, listB):
-    if len(listA) != len(listB):
-        return False
-    for i in range(len(listA)):
-        if listA[i] != listB[i]:
-            return False
-    return True
 
 
 if __name__ == "__main__":
