@@ -4,7 +4,7 @@ def execute_instruction(instructions):
     steps = 0
     curIndex = 0
     while curIndex < len(instructions) and curIndex >= 0:
-        curInstr = int(instructions[curIndex]) #gets the value of the instr poitned by index
+        curInstr = int(instructions[curIndex]) #gets the value of the instr pointed by index
         if curInstr >= 3:
             instructions[curIndex] -= 1
         else:
