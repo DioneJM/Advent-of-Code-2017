@@ -1,6 +1,6 @@
 
 
-class Tree(object):
+class Node(object):
     def __init__(self):
         self.weight = 0
         self.children = list()
@@ -17,7 +17,7 @@ def createGraph(programList):
             children = prg[1].split(", ")
         else:
             children = []
-        elem = Tree()
+        elem = Node()
         elem.weight = int(weight)
         elem.children = children
         graph[name] = elem
