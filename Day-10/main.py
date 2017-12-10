@@ -23,17 +23,18 @@ def knotHash(size, lengths, iterations):
             skipSize += 1
 
     product = inpList[0]*inpList[1]
-
-    denseHash = str()
-    for block in range(listLen//16):
-        denseVal =  0
-        for sparse in range(16):
-            denseVal ^= inpList[block * 16 + sparse]
-        denseHash += hex(denseVal)[2:].zfill(2)
-
     print("Product:", product)
-    print("Knot Hash:", denseHash)
-    print("Iterations:", iterations)
+
+    if iterations == 64:
+        knotHash = str()
+        for block in range(listLen//16):
+            denseVal =  0
+            for sparse in range(16):
+                denseVal ^= inpList[block * 16 + sparse]
+            knotHash += hex(denseVal)[2:].zfill(2)
+
+        print("Knot Hash:", knotHash)
+        print("Iterations:", iterations)
 if __name__ == "__main__":
     maxVal = 256#256 for puzzle
     fileIn = open("input.txt").read()
